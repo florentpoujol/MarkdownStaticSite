@@ -1,6 +1,6 @@
 # Markdown Static Site
 
-Markdown Static Site is a small vanilla PHP script that lats you easily turn a bunch of [markdown](https://daringfireball.net/projects/markdown) files into a static site.
+Markdown Static Site is a small vanilla PHP script that lets you easily turn a bunch of [markdown](https://daringfireball.net/projects/markdown) files into a static site.
 
 ## Installation
 
