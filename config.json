@@ -1,0 +1,6 @@
+{
+    "markdownFilesPath": "files",
+    "defaultPath": "welcomephp",
+    "useModRewrite": false,
+    "rewriteExtensions": [ "md", "html", "php" ]
+}

@@ -9,7 +9,16 @@ $path = "welcome";
 $useModRewrite = true;
 
 // type of file that can be accessed without specifying the extension
-$fileTypes = array( "md", "html", "php" );
+$rewriteExtensions = array( "md", "html", "php" );
+
+if ( file_exists( "config.json" ) ) {
+    $config = json_decode( file_get_contents( "config.json" ), true );
+    $markdownFilesPath = $config["markdownFilesPath"];
+    $path = $config["defaultPath"];
+    $useModRewrite = $config["useModRewrite"];
+    $rewriteExtensions = $config["rewriteExtensions"];
+}
+
 
 //-----------------------------------------
 
@@ -33,7 +42,7 @@ $pageTitle = ucwords( $pathInfo['filename'] );
 $filePath = $markdownFilesPath."/".$path;
 
 if ( !isset( $pathInfo['extension'] ) ) {
-    foreach ($fileTypes as $ext) {
+    foreach ($rewriteExtensions as $ext) {
         if ( file_exists( $filePath.".".$ext ) ) {
             $filePath .= ".".$ext;
             break;
