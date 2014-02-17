@@ -38,7 +38,7 @@ else // index, redirect toward default path
     header( "Location: ".$indexUrl.$path );
 
 $pathInfo = pathinfo( $path );
-$pageTitle = ucwords( $pathInfo['filename'] );
+$pageTitle = ucwords( str_replace( "-", " ", $pathInfo['filename'] ) );
 $filePath = $markdownFilesPath."/".$path;
 
 if ( !isset( $pathInfo['extension'] ) ) {
