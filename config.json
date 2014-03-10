@@ -2,5 +2,6 @@
     "markdownFilesPath": "files",
     "defaultPath": "welcome",
     "useModRewrite": true,
-    "rewriteExtensions": [ "md", "html", "php" ]
+    "rewriteExtensions": [ "md", "html", "php" ],
+    "redirect": { "old": "new" }
 }

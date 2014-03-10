@@ -11,12 +11,16 @@ $useModRewrite = true;
 // type of file that can be accessed without specifying the extension
 $rewriteExtensions = array( "md", "html", "php" );
 
+// list of redirections - old => new
+$redirect = array();
+
 if ( file_exists( "config.json" ) ) {
     $config = json_decode( file_get_contents( "config.json" ), true );
     $markdownFilesPath = $config["markdownFilesPath"];
     $path = $config["defaultPath"];
     $useModRewrite = $config["useModRewrite"];
     $rewriteExtensions = $config["rewriteExtensions"];
+    $redirect = $config["redirect"];
 }
 
 
@@ -51,6 +55,10 @@ if ( !isset( $pathInfo['extension'] ) ) {
 }
 
 if ( !file_exists( $filePath ) ) {
+    if (isset($redirect[$path])) {
+        header( "Location: ".$indexUrl.$redirect[$path] );
+    }
+    
     $filePath = "404.php";
     $title = "404";
 }
