@@ -1,8 +1,9 @@
-<!--
-$pageTitle  is the CamelCased name of the file
-$filePath   is the relative file path
-$indexUrl   is the absolute url of the root folder
--->
+<?php
+// $pageTitle  is the CamelCased name of the file
+// $filePath   is the relative file path
+// $indexUrl   is the absolute url of the root index.php. Ends by "index.php"
+// $indexPath  is the absolute url of the root folder. Doesn't end with a slash.
+?>
 <html>
     <head>
         <meta charset="UTF-8">
